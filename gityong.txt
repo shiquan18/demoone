@@ -1,0 +1,178 @@
+1.填写唯一标识：
+kangyuan@kangyuan-PC MINGW64 /
+$ git config --global user.name "feiqiang6060"
+
+kangyuan@kangyuan-PC MINGW64 /
+$ git config --global user.email "609790701@qq.com"
+
+2.
+ls
+pwd
+cd
+mkdir
+mkdirs
+rm
+..
+
+3.
+kangyuan@kangyuan-PC MINGW64 /E/gitdemo
+$ git init
+Initialized empty Git repository in E:/gitdemo/.git/
+
+4.
+git add git.txt添加到暂存区里面去
+git commit -m "git.txt" （"git.txt"）提交的注释
+git status  查看是否还有文件未提交
+git diff git.txt  查看修改的内容
+
+5.版本回退：
+git log
+----------------
+commit e53f97773878699fc2f3c1b524486bf7786c42c9///版本号
+Author: feiqiang6060 <609790701@qq.com>
+Date:   Mon Feb 27 14:07:36 2017 +0800
+    git.txt3///提交注解
+
+commit 1a5a8de589d6371dea0e9658dcee6f17149c50b5
+Author: feiqiang6060 <609790701@qq.com>
+Date:   Mon Feb 27 14:04:21 2017 +0800
+    git.txt2
+
+commit ff8b4dc95876278a3670d5c8a6dd262f24e49e44
+Author: feiqiang6060 <609790701@qq.com>
+Date:   Mon Feb 27 13:56:05 2017 +0800
+    git.txt
+----------------------------------
+git log --pretty=oneline
+
+e53f97773878699fc2f3c1b524486bf7786c42c9 git.txt3
+1a5a8de589d6371dea0e9658dcee6f17149c50b5 git.txt2
+ff8b4dc95876278a3670d5c8a6dd262f24e49e44 git.txt
+
+cat readme.txt查看内容
+
+git reset? -–hard HEAD^ 
+HEAD^ 改成 HEAD^^ 以此类推。
+git reset? –hard HEAD~100
+
+
+可获取到版本号：git reflog
+git reset? –hard 6fcfc89 回到指定版本
+
+
+
+6.撤销修改
+git checkout -- git.txt ：撤销没有添加到暂存区的内容。
+
+
+
+7.远程仓库：
+ssh-keygen? -t rsa –C “youremail@example.com”
+
+本地和远程关联
+ git remote add origin https://github.com/shiquan18/demoone.git
+
+1.本地推送到远程去
+$ git push -u origin master
+账号密码
+
+2.远程克隆
+$ git clone https://github.com/shiquan18/demotwo
+
+
+8.创建合并分支
+git checkout -b dev :创建并切换分支
+git branch 查看当前分支
+git checkout master  :切换分支
+git merge dev  在master分支上合并dev分支内容
+git branch -d dev ：删除分支
+git branch 查看分支
+
+
+查看分支：git branch
+
+创建分支：git branch name
+
+切换分支：git checkout name
+
+创建+切换分支：git checkout –b name
+
+合并某分支到当前分支：git merge name
+
+删除分支：git branch –d name
+
+
+8.1冲突解决
+git stash 将当前的工作现场隐藏起来
+git stash list 列表
+git stash drop删除一条
+git remote -v 查看远程库详细信息
+
+
+git push origin master 分支推送远程对应的分支上
+git push origin dev 把分支推送远程库去
+
+
+Git基本常用命令如下：
+
+?? mkdir：???????? XX (创建一个空目录 XX指目录名)
+
+?? pwd：????????? 显示当前目录的路径。
+
+?? git init????????? 把当前的目录变成可以管理的git仓库，生成隐藏.git文件。
+
+?? git add XX?????? 把xx文件添加到暂存区去。
+
+?? git commit –m “XX”? 提交文件 –m 后面的是注释。
+
+?? git status??????? 查看仓库状态
+
+?? git diff? XX????? 查看XX文件修改了那些内容
+
+?? git log????????? 查看历史记录
+
+?? git reset? –hard HEAD^ 或者 git reset? –hard HEAD~ 回退到上一个版本
+
+??????????????????????? (如果想回退到100个版本，使用git reset –hard HEAD~100 )
+
+?? cat XX???????? 查看XX文件内容
+
+?? git reflog?????? 查看历史记录的版本号id
+
+?? git checkout — XX? 把XX文件在工作区的修改全部撤销。
+
+?? git rm XX????????? 删除XX文件
+
+?? git remote add origin?https://github.com/tugenhua0707/testgit?关联一个远程库
+
+?? git push –u(第一次要用-u 以后不需要) origin master 把当前master分支推送到远程库
+
+? ?git clone?https://github.com/tugenhua0707/testgit? 从远程库中克隆
+
+? ?git checkout –b dev? 创建dev分支 并切换到dev分支上
+
+? ?git branch? 查看当前所有的分支
+
+? ?git checkout master 切换回master分支
+
+? ?git merge dev? ??在当前的分支上合并dev分支
+
+? ?git branch –d dev 删除dev分支
+
+? ?git branch name? 创建分支
+
+? ?git stash 把当前的工作隐藏起来 等以后恢复现场后继续工作
+
+? ?git stash list 查看所有被隐藏的文件列表
+
+? ?git stash apply 恢复被隐藏的文件，但是内容不删除
+
+? ?git stash drop 删除文件
+
+? ?git stash pop 恢复文件的同时 也删除文件
+
+? ?git remote 查看远程库的信息
+
+? ?git remote –v 查看远程库的详细信息
+
+? ?git push origin master? Git会把master分支推送到远程库对应的远程分支上
